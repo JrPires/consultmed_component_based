@@ -1,0 +1,23 @@
+
+<html xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>ConsulteMed</title>
+</h:head>
+
+<h:body>
+	<h:form style="align:center">
+
+		<p:panelGrid columns="2">
+			<p:outputLabel for="nomeUsuario" value="Login Usuário:" />
+			<p:inputText id="nomeUsuario" value="#{loginController.usuarioLogado.usuario.login}" />
+
+			<p:outputLabel for="senha" value="Senha:" />
+			<p:password id="senha" value="#{loginController.usuarioLogado.usuario.senha}" />
+		</p:panelGrid>
+		
+			<p:commandButton value="Enviar" action="#{loginController.loginUsuario()}" ajax="false"/>
+	</h:form>
+</h:body>
+</html>

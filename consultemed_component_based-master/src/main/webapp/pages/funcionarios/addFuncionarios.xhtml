@@ -1,0 +1,63 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	template="/WEB-INF/templates/Layout.xhtml">
+
+	<ui:define name="content">
+
+		<p:spacer height="10" />
+
+		<h:form>
+			<p:breadCrumb>
+				<p:menuitem value="Home" url="#" />
+				<p:menuitem value="Funcionários" url="#" />
+			</p:breadCrumb>
+		</h:form>
+
+		<p:spacer height="10" />
+
+
+
+		<h:form>
+		 <p:panel id="cadastroFuncionarios" header="Cadastro de Funcionários" style="margin-bottom:20px">
+		 
+			<h:panelGrid columns="2">
+			
+				<span class="ui-float-label"> 
+					<h:inputHidden value="#{funcionarioController.funcionario.id}" /> 
+				</span>
+				
+				<h3>Nome do Funcionário</h3>
+				<span class="ui-float-label"> 
+					<h:inputText id="nome" value="#{funcionarioController.funcionario.nome}" required="true"/> 
+				</span>
+				
+				<h3>E-mail do Funcionário</h3>
+				<span class="ui-float-label"> 
+					<h:inputText id="email" value="#{funcionarioController.funcionario.email}" required="true"/>
+				</span>
+				
+				<h3>Matricula do Funcionário</h3>
+				<span class="ui-float-label"> 
+					<h:inputText id="matricula" value="#{funcionarioController.funcionario.matricula}" required="true"/>
+				</span>
+				
+				<h3>Função do Funcionário</h3>
+				<span class="ui-float-label"> 
+					<h:inputText id="funcao" value="#{funcionarioController.funcionario.funcao}" required="true"/> 
+				</span>
+			
+			</h:panelGrid>
+			
+		</p:panel>
+		
+			<p:commandButton action="#{funcionarioController.addFuncionario()}" value="Salvar" />
+		
+		</h:form>
+
+
+	</ui:define>
+
+</ui:composition>
